@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Card Design</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        header {
+            width: 100%;
+            background-color: #343a40;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .header-title {
+            color: #f8f9fa;
+            font-size: 2rem;
+            margin: 0;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: #495057;
+            margin: 0;
+            padding: 10px 0;
+            list-style-type: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 60px; /* Adjust based on header height */
+            left: 0;
+            width: 100%;
+        }
+        .nav li {
+            margin: 0 15px;
+        }
+        .nav li a {
+            color: #f8f9fa;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 8px 12px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .nav li a:hover {
+            background-color: #6c757d;
+            border-radius: 5px;
+            color: #fff;
+        }
+        .description {
+            max-width: 600px;
+            text-align: center;
+            margin-top: 120px; /* Adjust to account for fixed header and nav */
+            color: #333;
+        }
+        .credit-card {
+            width: 300px;
+            height: 180px;
+            background: linear-gradient(135deg, #3b5998, #8b9dc3);
+            color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            margin-top: 20px;
+        }
+        .credit-card .logo {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 60px;
+        }
+        .credit-card .number {
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            margin-top: 30px;
+        }
+        .credit-card .details {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            font-size: 0.8rem;
+        }
+        .credit-card .details .name {
+            margin-bottom: 5px;
+        }
+        .credit-card .details .expiry {
+            margin-bottom: 5px;
+        }
+        .credit-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1 class="header-title">Welcome to World Trade Bank</h1>
+    </header>
+
+    <!-- Navigation Menu -->
+    <ul class="nav">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="term.html">About Us</a></li>
+        <li><a href="Branches.html">Our Branches</a></li>
+        <li><a href="credit.html">Credit Card</a></li>
+        <li><a href="Login.html">Login</a></li>
+    </ul>
+
+    <div class="description">
+        <h1>Credit Card Design</h1>
+        <p>Welcome to our interactive credit card design showcase. This credit card represents a typical design you might encounter in modern banking. It combines functionality with a sleek, aesthetic appearance to provide a secure and user-friendly experience.</p>
+        <p>The card features a gradient background that provides a contemporary look, while the clear display of essential information such as the card number, cardholder name, and expiry date ensures that users can quickly access their details. The logo at the top left represents the card issuer, adding a touch of authenticity and trust.</p>
+        <p>Credit cards are widely used for both online and offline transactions, offering convenience and security. The design you see here includes standard elements found on most credit cards, such as the card number in a prominent position, the cardholder's name, and the expiry date.</p>
+        <p>Whether you're designing a credit card for a new financial product or simply exploring card design principles, understanding these elements can help you create a functional and attractive credit card design.</p>
+    </div>
+
+    <div class="credit-card">
+        <img class="logo" src="https://via.placeholder.com/60x30" alt="Bank Logo">
+        <div class="number">1234 5678 9012 3456</div>
+        <div class="details">
+            <div class="name">JOHN DOE</div>
+            <div class="expiry">12/24</div>
+        </div>
+    </div>
+</body>
+</html>

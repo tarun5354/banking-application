@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking Application</title>
+    <style>
+        /* General Body Styling */
+        body {
+            font-family: Arial, sans-serif; /* Set a default font */
+            background-color: #f4f4f4; /* Light background color */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            display: flex; /* Use flexbox for layout */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full viewport height */
+            flex-direction: column; /* Stack items vertically */
+        }
+
+        /* Navigation Menu Styling */
+        nav ul {
+            list-style-type: none; /* Remove bullet points */
+            padding: 0; /* Remove default padding */
+            margin: 0; /* Remove default margin */
+            background-color: #333; /* Dark background color for the menu */
+            overflow: hidden; /* Clear floats */
+            border-radius: 5px; /* Rounded corners for the nav */
+            box-shadow: 0px 2px 10px rgba(0,0,0,0.1); /* Subtle shadow */
+        }
+
+        nav ul li {
+            display: inline-block; /* Display menu items in a line */
+        }
+
+        nav ul li a {
+            text-decoration: none; /* Remove underline from links */
+            color: white; /* Text color */
+            padding: 14px 20px; /* Add some padding */
+            display: block; /* Block-level links */
+            transition: background-color 0.3s ease; /* Smooth transition for hover */
+        }
+
+        nav ul li a:hover {
+            background-color: #575757; /* Darken background on hover */
+        }
+
+        nav ul li a.active {
+            background-color: #04AA6D; /* Highlight the active link */
+        }
+
+        /* Form Styling */
+        form {
+            background-color: #fff; /* White background for the form */
+            padding: 20px; /* Padding inside the form */
+            border-radius: 10px; /* Rounded corners */
+            max-width: 400px; /* Limit form width */
+            width: 100%; /* Full width within the max-width */
+            box-shadow: 0px 0px 15px rgba(0,0,0,0.2); /* Add shadow for depth */
+            margin-top: 20px; /* Add space at the top */
+        }
+
+        form h2 {
+            margin-bottom: 20px; /* Add space below the heading */
+            color: #333; /* Dark text color */
+            font-size: 24px; /* Increase font size */
+            text-align: center; /* Center align the heading */
+        }
+
+        form label {
+            display: block; /* Block-level labels */
+            margin-bottom: 8px; /* Space below the labels */
+            color: #333; /* Label text color */
+            font-weight: bold; /* Make labels bold */
+        }
+
+        form input[type="text"],
+        form input[type="number"] {
+            width: 100%; /* Full width */
+            padding: 10px; /* Padding inside input fields */
+            margin: 8px 0; /* Space between inputs */
+            display: block; /* Block-level elements */
+            border: 1px solid #ccc; /* Light grey border */
+            border-radius: 5px; /* Rounded corners */
+            box-sizing: border-box; /* Ensure padding doesn?t affect width */
+            font-size: 16px; /* Increase font size */
+        }
+
+        form input[type="submit"] {
+            background-color: #04AA6D; /* Button color */
+            color: white; /* Text color */
+            padding: 12px 20px; /* Padding inside the button */
+            border: none; /* Remove borders */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Change cursor on hover */
+            width: 100%; /* Full width button */
+            font-size: 18px; /* Increase font size */
+            transition: background-color 0.3s ease; /* Smooth transition for hover */
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #45a049; /* Darken button on hover */
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            nav ul {
+                display: flex; /* Flexbox for mobile layout */
+                flex-direction: column; /* Stack items vertically */
+            }
+
+            nav ul li {
+                width: 100%; /* Full width for each menu item */
+                text-align: center; /* Center align the text */
+            }
+
+            form {
+                width: 90%; /* Reduce form width for small screens */
+                margin-top: 10px; /* Reduce top margin */
+            }
+        }
+    </style>
+
+    <script>
+        function showForm(formId) {
+            var forms = document.getElementsByTagName("form");
+            for (var i = 0; i < forms.length; i++) {
+                forms[i].style.display = "none";
+            }
+
+            var form = document.getElementById(formId);
+            form.style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <h3 align='center'> Enjoy with the Application </h3>
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showForm('insert_account_form');">Create Account</a></li>
+            <li><a href="#" onclick="showForm('withdraw_form');">Withdraw</a></li>
+            <li><a href="#" onclick="showForm('deposit_form');">Deposit</a></li>
+            <li><a href="#" onclick="showForm('check_balance_form');">Check Balance</a></li>
+            <li><a href="#" onclick="showForm('update_name_form');">Update Name</a></li>
+            <li><a href="./Logout">Logout</a></li>
+        </ul>
+    </nav>
+
+    <form id="insert_account_form" action="CreateAccount" method="post" style="display: none;">
+        <h2>Create Account</h2>
+        <label for="accountNumber">Enter Account Number:</label>
+        <input type="text" id="accountNumber" name="accountNumber" required>
+        <label for="name">Enter Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="balance">Enter Balance:</label>
+        <input type="number" id="balance" name="balance" required>
+        <input type="submit" value="Create Account">
+    </form>
+
+    <form id="withdraw_form" action="Withdraw" method="post" style="display: none;">
+        <h2>Withdraw</h2>
+        <label for="accountNumberWithdraw">Enter Account Number:</label>
+        <input type="text" id="accountNumberWithdraw" name="accountNumberWithdraw" required>
+        <label for="amountWithdraw">Enter Withdrawal Amount:</label>
+        <input type="number" id="amountWithdraw" name="amountWithdraw" required>
+        <input type="submit" value="Withdraw">
+    </form>
+
+    <form id="deposit_form" action="Deposit" method="post" style="display: none;">
+        <h2>Deposit</h2>
+        <label for="accountNumberDeposit">Enter Account Number:</label>
+        <input type="text" id="accountNumberDeposit" name="accountNumberDeposit" required>
+        <label for="amountDeposit">Enter Deposit Amount:</label>
+        <input type="number" id="amountDeposit" name="amountDeposit" required>
+        <input type="submit" value="Deposit">
+    </form>
+
+    <!-- Check Balance Form -->
+    <form id="check_balance_form" action="CheckBalance" method="get" style="display: none;">
+        <h2>Check Balance</h2>
+        <label for="accountNumberCheckBalance">Enter Account Number:</label>
+        <input type="text" id="accountNumberCheckBalance" name="accountNumberCheckBalance" required>
+        <input type="submit" value="Check Balance">
+    </form>
+
+    <!-- Update Name Form -->
+    <form id="update_name_form" action="UpdateName" method="post" style="display: none;">
+        <h2>Update Name</h2>
+        <label for="accountNumberUpdateName">Enter Account Number:</label>
+        <input type="text" id="accountNumberUpdateName" name="accountNumberUpdateName" required>
+        <label for="newName">Enter New Name:</label>
+        <input type="text" id="newName" name="newName" required>
+        <input type="submit" value="Update Name">
+    </form>
+</body>
+</html>

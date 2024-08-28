@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Digital Bank Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+        }
+
+        header {
+            background-color: #343a40;
+            padding: 20px;
+            text-align: center;
+            color: #f8f9fa;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-title {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .nav {
+            list-style-type: none;
+            margin: 0;
+            padding: 10px 0;
+            background-color: #495057;
+            display: flex;
+            justify-content: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav li {
+            margin: 0 20px;
+        }
+
+        .nav li a {
+            color: #f8f9fa;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 8px 12px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav li a:hover {
+            background-color: #6c757d;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+        .login-container {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .login-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-container input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        .not-registered {
+            margin-top: 20px;
+            font-size: 0.9rem;
+        }
+
+        .not-registered a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .not-registered a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1 class="header-title">Welcome to Digital Bank</h1>
+    </header>
+
+    <!-- Navigation Menu -->
+    <ul class="nav">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="term.html">About Us</a></li>
+        <li><a href="Branches.html">Our Branches</a></li>
+        <li><a href="credit.html">Credit Card</a></li>
+        <li><a href="Login.html">Login</a></li>
+    </ul>
+
+    <!-- Login Form -->
+    <section>
+        <div class="login-container">
+            <h2>Login</h2>
+            <form action="Login" method="get" onsubmit="return validation()">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="submit" value="Login">
+            </form>
+            <div class="not-registered">
+                <p>Not registered? <a href="register.html">Create an account</a></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function validation() {
+            // Simple validation logic here
+            // For example, you can check if the username and password fields are not empty
+            var username = document.querySelector('input[name="username"]').value;
+            var password = document.querySelector('input[name="password"]').value;
+
+            if (username === "" || password === "") {
+                alert("Please fill in both fields.");
+                return false;
+            }
+
+            // Add more validation if needed
+            return true;
+        }
+    </script>
+</body>
+</html>

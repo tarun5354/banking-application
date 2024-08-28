@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Digital Bank Registration</title>
+</head>
+<body style="
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+">
+
+    <!-- Header Section -->
+    <header style="
+        background-color: #343a40;
+        padding: 20px;
+        width: 100%;
+        color: #f8f9fa;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    ">
+        <h1 style="
+            font-size: 2.5rem;
+            margin: 0;
+        ">Welcome to Digital Bank</h1>
+    </header>
+
+    <!-- Navigation Menu -->
+    <ul style="
+        list-style-type: none;
+        margin: 0;
+        padding: 10px 0;
+        background-color: #495057;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: 100%;
+    ">
+        <li style="margin: 0 10px;"><a href="home" style="
+            color: #f8f9fa;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 8px 12px;
+            transition: background-color 0.3s, color 0.3s;
+        ">Home</a></li>
+        <li style="margin: 0 10px;"><a href="home" style="
+            color: #f8f9fa;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 8px 12px;
+            transition: background-color 0.3s, color 0.3s;
+        ">About Us</a></li>
+        <li style="margin: 0 10px;"><a href="home" style="
+            color: #f8f9fa;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 8px 12px;
+            transition: background-color 0.3s, color 0.3s;
+        ">Our Branches</a></li>
+        <li style="margin: 0 10px;"><a href="home" style="
+            color: #f8f9fa;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 8px 12px;
+            transition: background-color 0.3s, color 0.3s;
+        ">Credit Card</a></li>
+        <li style="margin: 0 10px;"><a href="Login.html" style="
+            color: #f8f9fa;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 8px 12px;
+            transition: background-color 0.3s, color 0.3s;
+        ">Login</a></li>
+    </ul>
+
+    <!-- Registration Form -->
+    <section>
+        <div style="
+            max-width: 400px;
+            width: 100%;
+            margin: 30px auto 0 auto;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        ">
+            <h2 style="
+                margin-bottom: 20px;
+                font-size: 1.5rem;
+            ">Register</h2>
+            <form action="Register" method="post" onsubmit="return validation()">
+                <input type="text" name="username" placeholder="Username" required style="
+                    width: 100%;
+                    padding: 12px;
+                    margin: 12px 0;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    font-size: 1rem;
+                ">
+                <input type="password" name="password" placeholder="Password" required style="
+                    width: 100%;
+                    padding: 12px;
+                    margin: 12px 0;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    font-size: 1rem;
+                ">
+                <input type="password" name="confirm-password" placeholder="Confirm Password" required style="
+                    width: 100%;
+                    padding: 12px;
+                    margin: 12px 0;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    font-size: 1rem;
+                ">
+                <input type="submit" value="Register" style="
+                    width: 100%;
+                    padding: 12px;
+                    background-color: #007bff;
+                    color: #fff;
+                    border: none;
+                    border-radius: 5px;
+                    font-size: 1rem;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+                ">
+            </form>
+        </div>
+    </section>
+
+    <script>
+        function validation() {
+            var password = document.querySelector('input[name="password"]').value;
+            var confirmPassword = document.querySelector('input[name="confirm-password"]').value;
+
+            if (password === "") {
+                alert("Password cannot be empty.");
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
